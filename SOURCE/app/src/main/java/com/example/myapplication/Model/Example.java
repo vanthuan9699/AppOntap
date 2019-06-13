@@ -4,7 +4,7 @@ import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class ExampleContact {
+public class Example {
 
 @SerializedName("status")
 @Expose
@@ -14,7 +14,7 @@ private Integer status;
 private Integer code;
 @SerializedName("result")
 @Expose
-private List<Result> result = null;
+private List<PlaceResult> result = null;
 @SerializedName("message")
 @Expose
 private String message;
@@ -35,11 +35,11 @@ public void setCode(Integer code) {
 this.code = code;
 }
 
-public List<Result> getResult() {
+public List<PlaceResult> getResult() {
 return result;
 }
 
-public void setResult(List<Result> result) {
+public void setResult(List<PlaceResult> result) {
 this.result = result;
 }
 

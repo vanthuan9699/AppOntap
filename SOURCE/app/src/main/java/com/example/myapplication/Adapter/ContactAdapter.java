@@ -6,11 +6,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.myapplication.Model.Result;
+import com.example.myapplication.Model.ContactResult;
 import com.example.myapplication.R;
 
 import java.util.List;
@@ -27,20 +26,22 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
         this.context = context;
     }
 
-    public List<Result>data;
+    public List<ContactResult> data;
+
     @NonNull
     @Override
     public ContactViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-     View view = LayoutInflater.from(context).inflate(R.layout.list_contact, viewGroup, false);
-       ContactViewHolder contactViewHolder = new ContactViewHolder(view);
+        View view = LayoutInflater.from(context).inflate(R.layout.activity_list_contact, viewGroup, false);
+        ContactViewHolder contactViewHolder = new ContactViewHolder(view);
         return contactViewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull ContactViewHolder contactViewHolder, int i) {
-        Result contactResult = data.get(i);
+        ContactResult contactResult = data.get(i);
         contactViewHolder.tvName.setText(contactResult.getName());
         contactViewHolder.tvPhone.setText(contactResult.getPhone());
+
 
     }
 
@@ -49,8 +50,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
         return data.size();
     }
 
-   public class ContactViewHolder extends RecyclerView.ViewHolder {
-
+    public class ContactViewHolder extends RecyclerView.ViewHolder {
         TextView tvName, tvPhone;
 
 
@@ -58,6 +58,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
             super(itemView);
             tvName = itemView.findViewById(R.id.tv_name);
             tvPhone = itemView.findViewById(R.id.tv_phone);
+
         }
     }
 }

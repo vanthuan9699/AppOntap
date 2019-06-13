@@ -6,14 +6,14 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.example.myapplication.Adapter.ContactAdapter;
-import com.example.myapplication.Model.ExampleContact;
+import com.example.myapplication.Model.ContactExample;
 import com.example.myapplication.R;
 import com.example.myapplication.Utils.Utils;
 import com.google.gson.Gson;
 
 public class ContactActivity extends AppCompatActivity {
     RecyclerView rcvContact;
-    ExampleContact resultContact;
+    ContactExample resultContact;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class ContactActivity extends AppCompatActivity {
     public void docJson() {
         String strHomeData = Utils.loadJsonContact(this);
         Gson gson = new Gson();
-        resultContact = gson.fromJson(strHomeData, ExampleContact.class);
+        resultContact = gson.fromJson(strHomeData, ContactExample.class);
 
     }
 

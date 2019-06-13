@@ -22,7 +22,7 @@ public class PlaceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_place);
         readJson();
-        configRVContact();
+        configRVPlace();
         initData();
 
     }
@@ -32,7 +32,7 @@ public class PlaceActivity extends AppCompatActivity {
         placeExample = gson.fromJson(strHomeData, Example.class);
 
     }
-    void configRVContact() {
+    void configRVPlace() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(PlaceActivity.this, LinearLayoutManager.VERTICAL, false);
         rcvPlace.setLayoutManager(linearLayoutManager);
         PlaceAdapter adapter = new PlaceAdapter();
@@ -41,7 +41,7 @@ public class PlaceActivity extends AppCompatActivity {
         rcvPlace.setAdapter(adapter);
     }
     void initData(){
-        rcvPlace =  findViewById(R.id.rcv_place);
+        rcvPlace = (RecyclerView)  findViewById(R.id.rcv_place);
     }
 
 

@@ -41,22 +41,30 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
     public void onBindViewHolder(@NonNull PlaceViewHolder placeViewHolder, int i) {
         PlaceResult placeResult = data.get(i);
         placeViewHolder.tvName.setText(placeResult.getPlaceName());
+        int a = placeResult.getIsPromotion();
+        if(a ==1){
+            placeViewHolder.tvPromotion.setVisibility(View.VISIBLE);
+        }else {
+            placeViewHolder.tvPromotion.setVisibility(View.INVISIBLE);
+        }
 
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return data.size();
     }
 
     public class PlaceViewHolder extends RecyclerView.ViewHolder {
-        TextView tvName;
+        TextView tvName, tvPromotion;
 
 
         public PlaceViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvName = itemView.findViewById(R.id.tv_PlaceName);
+            tvName = itemView.findViewById(R.id.tv_name_place);
+            tvPromotion = itemView.findViewById(R.id.tv_promotion);
+
 
         }
     }

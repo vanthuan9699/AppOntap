@@ -26,7 +26,7 @@ public class ContactActivity extends AppCompatActivity {
     }
 
     public void docJson() {
-        String strHomeData = Utils.loadJsonContact(this);
+        String strHomeData = Utils.loadJson(this, "Contact.json");
         Gson gson = new Gson();
         resultContact = gson.fromJson(strHomeData, ContactExample.class);
 

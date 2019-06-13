@@ -6,11 +6,11 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class Utils {
-    public static String loadJsonContact(Context context){
+    public static String loadJson(Context context, String json) {
 
         String str = null;
         try {
-            InputStream is = context.getAssets().open("Contact.json");
+            InputStream is = context.getAssets().open(json);
             int size = is.available();
             byte[] buffer = new byte[size];
             is.read(buffer);
@@ -20,39 +20,7 @@ public class Utils {
             ex.printStackTrace();
             return null;
         }
-        return str;
-    }
-    public static String loadJsonPlace(Context context){
 
-        String str = null;
-        try {
-            InputStream is = context.getAssets().open("Place.json");
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            str = new String(buffer, "UTF-8");
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            return null;
-        }
-        return str;
-    }
-
-    public static String loadJsonPromo(Context context){
-
-        String str = null;
-        try {
-            InputStream is = context.getAssets().open("Promotion.json");
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            str = new String(buffer, "UTF-8");
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            return null;
-        }
         return str;
     }
 }

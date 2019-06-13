@@ -21,13 +21,14 @@ public class PlaceActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_place);
+        initData();
         readJson();
         configRVPlace();
-        initData();
+
 
     }
     public void readJson() {
-        String strHomeData = Utils.loadJsonContact(this);
+        String strHomeData = Utils.loadJson(this, "Place.json");
         Gson gson = new Gson();
         placeExample = gson.fromJson(strHomeData, Example.class);
 

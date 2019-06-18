@@ -31,9 +31,11 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
     @NonNull
     @Override
     public PlaceViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(context).inflate(R.layout.activity_list_place, viewGroup, false);
-        PlaceAdapter.PlaceViewHolder placeViewHolder = new PlaceViewHolder(view);
-        return placeViewHolder;
+//        View view = LayoutInflater.from(context).inflate(R.layout.activity_list_place, viewGroup, false);
+//        PlaceAdapter.PlaceViewHolder placeViewHolder = new PlaceViewHolder(view);
+//        return placeViewHolder;
+        return new PlaceViewHolder(LayoutInflater.from(context).inflate(R.layout.activity_list_place, viewGroup, false));
+
 
     }
 
